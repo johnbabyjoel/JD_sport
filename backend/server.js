@@ -15,7 +15,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://jd-sport-rn94.vercel.app'],
+  origin: ['http://localhost:3000', 'https://jdspfrd.vercel.app'],
   credentials: true
 })); // Allow requests from React frontend
 app.use(express.json()); // Parse JSON data

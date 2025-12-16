@@ -85,7 +85,7 @@ function Admin() {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/products/${id}`);
+        await axios.delete(`https://jd-sport-rn94.vercel.app/api/products/${id}`);
         setMessage('Product deleted successfully!');
         fetchProducts();
         setTimeout(() => setMessage(''), 3000);
