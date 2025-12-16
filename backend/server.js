@@ -14,14 +14,17 @@ const productRoutes = require('./routes/productRoutes');
 const app = express();
 
 // Middleware
-app.use(cors()); // Allow requests from React frontend
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://jd-sport-rn94.vercel.app'],
+  credentials: true
+})); // Allow requests from React frontend
 app.use(express.json()); // Parse JSON data
 app.use('/uploads', express.static('uploads')); // Serve uploaded images
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('✅ Connected to MongoDB'))
-  .catch((err) => console.error('❌ MongoDB connection error:', err));
+  .then(() => console.log(' Connected to MongoDB'))
+  .catch((err) => console.error(' MongoDB connection error:', err));
 
 // Routes
 app.use('/api/products', productRoutes);
@@ -34,5 +37,5 @@ app.get('/', (req, res) => {
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
+  console.log(` Server is running on port ${PORT}`);
 });

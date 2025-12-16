@@ -12,7 +12,7 @@ function Home() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/products");
+      const response = await axios.get("https://jd-sport-rn94.vercel.app/api/products");
       setProducts(response.data);
       setLoading(false);
     } catch (error) {

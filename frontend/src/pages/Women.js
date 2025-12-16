@@ -13,7 +13,7 @@ function Women() {
 
   const fetchWomenProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products/category/Women');
+      const response = await axios.get('https://jd-sport-rn94.vercel.app/api/products/category/Women');
       setProducts(response.data);
       setLoading(false);
     } catch (error) {

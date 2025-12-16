@@ -20,7 +20,7 @@ function Admin() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products');
+      const response = await axios.get('https://jd-sport-rn94.vercel.app/api/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -53,7 +53,7 @@ function Admin() {
     data.append('image', image);
 
     try {
-      await axios.post('http://localhost:5000/api/products', data, {
+      await axios.post('https://jd-sport-rn94.vercel.app/api/products', data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
